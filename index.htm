@@ -137,33 +137,34 @@
 
     <script>
         document.getElementById("devolucaoForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+    event.preventDefault();
 
-            let codigo = "DEV-" + Math.floor(1000 + Math.random() * 9000); // Gera um número entre 1000 e 9999
+    let codigo = "DEV-" + Math.floor(1000 + Math.random() * 9000); // Gera um número entre 1000 e 9999
 
-            let data = {
-                unidade: document.getElementById("unidade").value,
-                supervisor: document.getElementById("supervisor").value,
-                vendedor: document.getElementById("vendedor").value,
-                cliente: document.getElementById("cliente").value,
-                cnpj: document.getElementById("cnpj").value,
-                nf: document.getElementById("nf").value,
-                motivo: document.getElementById("motivo").value,
-                data: document.getElementById("data").value,
-                freteiro: document.getElementById("freteiro").value,
-                codigo: codigo
-            };
+    let data = {
+        unidade: document.getElementById("unidade").value,
+        supervisor: document.getElementById("supervisor").value,
+        vendedor: document.getElementById("vendedor").value,
+        cliente: document.getElementById("cliente").value,
+        cnpj: document.getElementById("cnpj").value,
+        nf: document.getElementById("nf").value,
+        motivo: document.getElementById("motivo").value,
+        data: document.getElementById("data").value,
+        freteiro: document.getElementById("freteiro").value,
+        codigo: codigo
+    };
 
-            fetch("1pUFv1VzcOI9-u0miYW1lfqDMlKHUbo0S2lq62GG3KtQ", {
-                method: "POST",
-                mode: "no-cors",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data)
-            });
+    fetch('<URL_DO_SEU_WEB_APP>', {
+        method: 'POST',
+        body: new URLSearchParams(data)
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert('Dados enviados para a planilha do Google com sucesso!');
+    })
+    .catch(error => console.error('Erro ao enviar dados:', error));
+});
 
-            document.getElementById("codigo").innerText = "Código Gerado: " + codigo;
-            this.reset();
-        });
     </script>
 
 </body>

@@ -132,16 +132,16 @@
                 codigo: codigo
             };
 
-            fetch('https://script.google.com/macros/s/AKfycbyCZR6YW7KG2KNVFEtifCEoLoKCESx2_o5nwp1ewNh8Ddq4tmCcv-O5DFL49O3rBajr/exec'), { // Substitua pelo URL do seu Web App do Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbyCZR6YW7KG2KNVFEtifCEoLoKCESx2_o5nwp1ewNh8Ddq4tmCcv-O5DFL49O3rBajr/exec', { // Substitua pelo URL do seu Web App do Google Apps Script
                 method: 'POST',
                 body: new URLSearchParams(data)
             })
             .then(response => response.text())
             .then(data => {
-                alert('Devolução cadastrada com sucesso,informe o código para o freteiro');
+                alert('Devolução Cadastrada com sucesso, envie o código abaixo para o freteiro!');
                 // Limpar os campos do formulário
                 document.getElementById("devolucaoForm").reset();
-                
+                document.getElementById("codigoGerado").textContent = ''; // Limpar o código gerado
             })
             .catch(error => console.error('Erro ao enviar dados:', error));
         });
@@ -149,3 +149,4 @@
 
 </body>
 </html>
+

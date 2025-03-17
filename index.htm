@@ -132,13 +132,13 @@
                 codigo: codigo
             };
 
-            fetch('1pUFv1VzcOI9-u0miYW1lfqDMlKHUbo0S2lq62GG3KtQ', { // Substitua pelo URL do seu Web App do Google Apps Script
+            fetch('1pUFv1VzcOI9-u0miYW1lfqDMlKHUbo0S2lq62GG3KtQ'), { // Substitua pelo URL do seu Web App do Google Apps Script
                 method: 'POST',
                 body: new URLSearchParams(data)
             })
             .then(response => response.text())
             .then(data => {
-                alert('Dados enviados para a planilha do Google com sucesso!');
+                alert('Devolução cadastrada com sucesso,informe o código para o freteiro');
                 // Limpar os campos do formulário
                 document.getElementById("devolucaoForm").reset();
                 document.getElementById("codigoGerado").textContent = ''; // Limpar o código gerado

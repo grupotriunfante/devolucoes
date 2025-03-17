@@ -7,166 +7,141 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
             margin: 0;
         }
-        .container {
-            background: white;
+        form {
+            background-color: #fff;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-        }
-        h2 {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            font-weight: bold;
-            text-align: left;
-            margin-top: 10px;
-        }
-        input, select {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            max-width: 600px;
         }
-        button {
-            margin-top: 15px;
+        input, select, button {
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
             color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
             cursor: pointer;
         }
         button:hover {
-            background-color: #0056b3;
-        }
-        #codigo {
-            margin-top: 15px;
-            font-weight: bold;
-            color: green;
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <form id="devolucaoForm">
         <h2>Formulário de Devolução</h2>
 
-        <form id="devolucaoForm">
-            <label>Unidade:</label>
-            <select id="unidade" required>
-                <option value="">Selecione a Unidade</option>
-                <option>ABC</option>
-                <option>API</option>
-                <option>MCD</option>
-                <option>TCA</option>
-                <option>TCG</option>
-                <option>TPH</option>
-                <option>TBA</option>
-                <option>TPA</option>
-                <option>TSJ</option>
-                <option>TBL</option>
-                <option>TCV</option>
-            </select>
+        <label for="unidade">Unidade:</label>
+        <select id="unidade">
+            <option value="ABC">ABC</option>
+            <option value="API">API</option>
+            <option value="MCD">MCD</option>
+            <option value="TCA">TCA</option>
+            <option value="TCG">TCG</option>
+            <option value="TPH">TPH</option>
+            <option value="TBA">TBA</option>
+            <option value="TPA">TPA</option>
+            <option value="TSJ">TSJ</option>
+            <option value="TBL">TBL</option>
+            <option value="TCV">TCV</option>
+        </select>
 
-            <label>Supervisor:</label>
-            <input type="text" id="supervisor" required>
+        <label for="supervisor">Supervisor:</label>
+        <input type="text" id="supervisor" required>
 
-            <label>Vendedor:</label>
-            <input type="text" id="vendedor" required>
+        <label for="vendedor">Vendedor:</label>
+        <input type="text" id="vendedor" required>
 
-            <label>Cliente:</label>
-            <input type="text" id="cliente" required>
+        <label for="cliente">Cliente:</label>
+        <input type="text" id="cliente" required>
 
-            <label>CNPJ:</label>
-            <input type="text" id="cnpj" required>
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" id="cnpj" required>
 
-            <label>NF:</label>
-            <input type="text" id="nf" required>
+        <label for="nf">NF:</label>
+        <input type="text" id="nf" required>
 
-            <label>Motivo da Devolução:</label>
-            <select id="motivo" required>
-                <option value="">Selecione um motivo</option>
-                <option>CLIENTE NÃO FEZ PEDIDO</option>
-                <option>CLIENTE NÃO ACEITOU OU DESISTIU DO PEDIDO</option>
-                <option>CLIENTE NÃO TEM DINHEIRO OU CHEQUE</option>
-                <option>CLIENTE FECHADO</option>
-                <option>DIVERGÊNCIA NO PORTADOR</option>
-                <option>DIVERGÊNCIA NO PREÇO OU PRAZO</option>
-                <option>NÃO AUTORIZADO ENTREGAR PELO FINANCEIRO</option>
-                <option>FALTOU A TROCA</option>
-                <option>FALTOU A BONIFICAÇÃO</option>
-                <option>ERRO DE FATURAMENTO</option>
-                <option>DUPLICIDADE DE PEDIDO - MESMO NÚMERO</option>
-                <option>SUBSTITUIÇÃO DE PRODUTOS NO PEDIDO</option>
-                <option>PEDIDO A MAIOR OU MENOR - QUANTIDADE</option>
-                <option>MERCADORIA FALTOU NA CARGA</option>
-                <option>MERCADORIA AVARIADA</option>
-                <option>NÃO JUSTIFICADO</option>
-                <option>FORA DE ROTA</option>
-                <option>DEMORA NA ENTREGA</option>
-                <option>CLIENTE TROCADO</option>
-                <option>PRODUTO NÃO CADASTRADO NO CLIENTE</option>
-                <option>PEDIDO TROCADO</option>
-            </select>
+        <label for="motivo">Motivo da Devolução:</label>
+        <select id="motivo" required>
+            <option value="CLIENTE NAO FEZ PEDIDO">CLIENTE NAO FEZ PEDIDO</option>
+            <option value="CLIENTE NAO ACEITOU OU DESISTIU DO PEDIDO">CLIENTE NAO ACEITOU OU DESISTIU DO PEDIDO</option>
+            <option value="CLIENTE NAO TEM DINHEIRO OU CHEQUE">CLIENTE NAO TEM DINHEIRO OU CHEQUE</option>
+            <option value="CLIENTE FECHADO">CLIENTE FECHADO</option>
+            <option value="DIVERGENCIA NO PORTADOR">DIVERGENCIA NO PORTADOR</option>
+            <option value="DIVERGENCIA NO PRECO OU PRAZO">DIVERGENCIA NO PRECO OU PRAZO</option>
+            <option value="NAO AUTORIZADO ENTREGAR PELO FINANCEIRO">NAO AUTORIZADO ENTREGAR PELO FINANCEIRO</option>
+            <option value="FALTOU A TROCA">FALTOU A TROCA</option>
+            <option value="FALTOU A BONIFICACAO">FALTOU A BONIFICACAO</option>
+            <option value="ERRO DE FATURAMENTO">ERRO DE FATURAMENTO</option>
+            <option value="DUPLICIDADE DE PEDIDO - MESMO NUMERO">DUPLICIDADE DE PEDIDO - MESMO NUMERO</option>
+            <option value="SUBSTITUICAO DE PRODUTOS NO PEDIDO">SUBSTITUICAO DE PRODUTOS NO PEDIDO</option>
+            <option value="PEDIDO A MAIOR OU MENOR - QUANTIDADE">PEDIDO A MAIOR OU MENOR - QUANTIDADE</option>
+            <option value="MERCADORIA FALTOU NA CARGA">MERCADORIA FALTOU NA CARGA</option>
+            <option value="MERCADORIA AVARIADA">MERCADORIA AVARIADA</option>
+            <option value="NAO JUSTIFICADO">NAO JUSTIFICADO</option>
+            <option value="FORA DE ROTA">FORA DE ROTA</option>
+            <option value="DEMORA NA ENTREGA">DEMORA NA ENTREGA</option>
+            <option value="CLIENTE TROCADO">CLIENTE TROCADO</option>
+            <option value="PRODUTO NAO CADASTRADO NO CLIENTE">PRODUTO NAO CADASTRADO NO CLIENTE</option>
+            <option value="PEDIDO TROCADO">PEDIDO TROCADO</option>
+        </select>
 
-            <label>Data:</label>
-            <input type="date" id="data" required>
+        <label for="data">Data:</label>
+        <input type="date" id="data" required>
 
-            <label>Freteiro:</label>
-            <input type="text" id="freteiro" required>
+        <label for="freteiro">Freteiro:</label>
+        <input type="text" id="freteiro" required>
 
-            <button type="submit">Enviar</button>
-        </form>
+        <button type="submit">Enviar</button>
 
-        <p id="codigo"></p>
-    </div>
+        <p id="codigoGerado" style="font-weight: bold;"></p>
+    </form>
 
     <script>
         document.getElementById("devolucaoForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+            event.preventDefault();
 
-    let codigo = "DEV-" + Math.floor(1000 + Math.random() * 9000); // Gera um número entre 1000 e 9999
+            // Gerando o código único
+            let codigo = "DEV-" + Math.floor(1000 + Math.random() * 9000); // Gera um número entre 1000 e 9999
+            document.getElementById("codigoGerado").textContent = "Código Gerado: " + codigo;
 
-    let data = {
-        unidade: document.getElementById("unidade").value,
-        supervisor: document.getElementById("supervisor").value,
-        vendedor: document.getElementById("vendedor").value,
-        cliente: document.getElementById("cliente").value,
-        cnpj: document.getElementById("cnpj").value,
-        nf: document.getElementById("nf").value,
-        motivo: document.getElementById("motivo").value,
-        data: document.getElementById("data").value,
-        freteiro: document.getElementById("freteiro").value,
-        codigo: codigo
-    };
+            let data = {
+                unidade: document.getElementById("unidade").value,
+                supervisor: document.getElementById("supervisor").value,
+                vendedor: document.getElementById("vendedor").value,
+                cliente: document.getElementById("cliente").value,
+                cnpj: document.getElementById("cnpj").value,
+                nf: document.getElementById("nf").value,
+                motivo: document.getElementById("motivo").value,
+                data: document.getElementById("data").value,
+                freteiro: document.getElementById("freteiro").value,
+                codigo: codigo
+            };
 
-    fetch('https://script.google.com/macros/s/AKfycbyCZR6YW7KG2KNVFEtifCEoLoKCESx2_o5nwp1ewNh8Ddq4tmCcv-O5DFL49O3rBajr/exec', {
-        method: 'POST',
-        body: new URLSearchParams(data)
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert('Dados enviados para a planilha do Google com sucesso!');
-    })
-    .catch(error => console.error('Erro ao enviar dados:', error));
-});
-        document.getElementById("codigo").innerText = "Código Gerado: " + codigo;
-            this.reset();
-});
+            fetch('https://script.google.com/macros/s/AKfycbyCZR6YW7KG2KNVFEtifCEoLoKCESx2_o5nwp1ewNh8Ddq4tmCcv-O5DFL49O3rBajr/exec', { // Substitua pelo URL do seu Web App do Google Apps Script
+                method: 'POST',
+                body: new URLSearchParams(data)
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert('Dados enviados para a planilha do Google com sucesso!');
+            })
+            .catch(error => console.error('Erro ao enviar dados:', error));
+        });
     </script>
 
 </body>
